@@ -1,0 +1,12 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    background-color: var(--gamme1__fond);
+    font-family: 'Main', 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gamme1__texte1);
+}
