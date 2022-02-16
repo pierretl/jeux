@@ -1,7 +1,54 @@
-$sombre1: #26292E;
-$sombre2: #F7F9F9;
+$couleur1 :      #160b27;
+$couleur2 :      #3e4768;
+$couleur3 :      #8e98b9;
+$couleur4 :      #dee6fe;
+$couleur5 :      #f3c41c;
+$couleur6 :      #f98617;
+$couleur7 :      #d42c4f;
+$couleur8 :      #5f0267;
+$couleur9 :      #4a10e8;
+$couleur10 :     #2197f0;
+$couleur11 :     #52daf7;
+$couleur12 :     #bb4d11;
+$couleur13 :     #ed7fb8;
+$couleur14 :     #30fca6;
+$couleur15 :     #17ba7d;
+$couleur16 :     #056244;
+
+
 
 :root {
-    --gamme1__fond: #{$sombre2};
-    --gamme1__texte1: #{$sombre1};
+    --couleur1: #{$couleur4};
+    --couleur2: #{$couleur3};
+    --couleur3: #{$couleur2};
+    --couleur4: #{$couleur1};
 }
+
+[data-mode=light] {
+    --couleur1: #{$couleur1};
+    --couleur2: #{$couleur2};
+    --couleur3: #{$couleur3};
+    --couleur4: #{$couleur4};
+}
+
+
+
+$couleur-fond :    var(--couleur4);
+$couleur-texte :   var(--couleur2);
+$couleur-bordure : var(--couleur3);
+
+$couleur-interaction__fond--fv :    var(--couleur1);
+$couleur-interaction__outline--fv : var(--couleur1);
+$couleur-interaction__color--fv:    var(--couleur4);
+
+$couleur-interaction1__fond :           var(--couleur2);
+$couleur-interaction1__texte :          var(--couleur4);
+$couleur-interaction1__fond--hover :    var(--couleur1);
+
+$couleur-interaction2__texte :          var(--couleur2);
+$couleur-interaction2__texte--hover :   var(--couleur1);
+
+$couleur-fiche-n :  var(--couleur1);
+$couleur-fiche-b :  var(--couleur4);
+
+

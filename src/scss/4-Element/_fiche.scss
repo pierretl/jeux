@@ -1,0 +1,20 @@
+.conteneur-fiche {
+    background-color: $couleur-bordure;
+    border-radius: $interation-border-radius;
+}
+
+
+.fiche {
+    width: rem-calc(14);
+    height: rem-calc(14);
+    border-radius: 50%;
+}
+
+.fiche.--b {
+    background-color: white;
+    border: 1px solid $couleur-bordure;
+}
+
+.fiche.--n {
+    background-color: black;
+}

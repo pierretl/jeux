@@ -2,11 +2,37 @@
     box-sizing: border-box;
 }
 
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $couleur-fond;
+    color: $couleur-texte;
+}
+
 body {
     padding: 0;
-    background-color: var(--gamme1__fond);
     font-family: 'Main', 'Times New Roman', Times, serif;
     font-size: 1rem;
     font-weight: 400;
-    color: var(--gamme1__texte1);
+}
+
+.reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+dt,dd {
+    display: inline-block;
+    width: 49%;
+}
+dt {
+    text-align: right;
+    font-weight: 700;
+}
+dd {
+    margin: 0;
+    padding-left: rem-calc(10);
 }

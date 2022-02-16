@@ -2,11 +2,112 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dnim Retsam</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <p>Yo !</p>
+<body class="app">
+
+    <input id="tirage" type="hidden" value="">
+    
+    <ul class="reset text-center js_ecran-commencez">
+        <li class="mb">
+            <select id="difficulte"></select>
+        </li>
+        <li class="mb">
+            <button class="btn js_btn-commencez">Commencez</button>
+        </li>
+        <li class="mb">
+            <button class="lien d-iflex ai-c gap js_regles">
+                <svg width="22px" height="22px" aria-hidden="true" focusable="false">
+                    <use xlink:href="#aide"></use>
+                </svg>
+                Règles
+            </button>
+        </li>
+        <li>
+            <input id="theme" type="checkbox" class="switch">
+            <label for="theme">
+                Thème sombre
+                <div></div>
+                Thème clair
+            </label>
+        </li>
+    </ul>
+
+    <section class="hide js_ecran-regles">
+        <h1>Déchiffrez le code secret</h1>
+        <p>Découvrir les couleurs et la disposition exacte du code secret</p>
+        <div class="d-flex bt bx bb">
+            <div class="p d-flex ai-c br">
+                Numéro de l'essai
+            </div>
+            <div class="grow d-flex ai-c p">
+                Fiche-codages
+            </div>
+            <div class="p d-flex ai-c">
+                Fiche-réponses
+            </div>
+        </div>
+        <p>L'ordre des fiches-réponses ne correspond pas à celle des fiches-codages</p>
+        <dl>
+            <dt>Fiche-réponses noires :</dt>
+            <dd>Bonne couleur, bien placé</dd>
+            <dt>Fiche-réponses blanches :</dt>
+            <dd>Bonne couleur, <strong>mal</strong> placé</dd>
+            <dt>Fiches-réponses manquantes :</dt>
+            <dd>Couleur incorrecte</dd>
+        </dl>
+        <div class="text-center">
+            <button class="btn js_fermer-regles">
+                J'ai compris, fermer les régles
+            </button>
+        </div>
+    </section>
+
+    <section class="js_ecran-dechiffreur">
+        <ol class="reset bb">
+            <li class="d-flex bt bx">
+                <div class="p d-flex ai-c br">
+                    02
+                </div>
+                <div class="grow d-flex ai-c p">
+                    select custom
+                </div>
+                <div class="p d-flex ai-c">
+                    <button class="btn">Valider</button>
+                </div>
+            </li>
+            <li class="d-flex bt bx">
+                <div class="p d-flex ai-c br">
+                    01
+                </div>
+                <div class="grow d-flex ai-c p">
+                    select custom
+                </div>
+                <div class="p">  
+                    <ul class="reset p d-flex ai-c gap wrap conteneur-fiche">
+                        <li class="fiche --n"></li>
+                        <li class="fiche --b"></li>
+                        <li class="fiche --b"></li>
+                        <li class="fiche"></li>
+                    </ul>  
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section class="text-center js_ecran-fin">
+        <p>Message</p>
+        <button class="btn js_btn-recommencez">Recommencez</button>
+    </section>
+
     <script src="script.min.js"></script>
+
+    <svg class="hide" width="0" height="0" aria-hidden="true" focusable="false">
+        <symbol id="aide" viewBox="0 0 48.71 49.02">
+            <path d="M24.36,0C10.9,0,0,10.16,0,22.69A22.1,22.1,0,0,0,9.08,40.36V49l8.29-4.58a26.27,26.27,0,0,0,7,1c13.45,0,24.35-10.16,24.35-22.7S37.81,0,24.36,0Zm1.75,35.25H22.5V31.64h3.61Zm3.8-13.91c-2,2.08-3.93,3-3.8,6.68H22.5c-.92-5.37,4.82-6.57,5.42-10.84.06-4.69-7.29-4.69-7.23,0H17.07C17.71,4.4,37.4,11,29.91,21.34Z"/>
+        </symbol>
+    </svg>
 </body>
 </html>

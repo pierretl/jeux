@@ -1,0 +1,30 @@
+$interation-border-radius: rem-calc(4);
+@mixin interaction {
+    border-radius: $interation-border-radius;
+    border-color: transparent;
+    font-size: 1rem;
+}
+
+
+$interaction--niveau1-padding-y: rem-calc(6);
+$interaction--niveau1-padding-x: rem-calc(12);
+@mixin interaction--niveau1 {
+    background-color: $couleur-interaction1__fond;
+    color: $couleur-interaction1__texte;
+    padding: $interaction--niveau1-padding-y $interaction--niveau1-padding-x;
+    line-height: 1.2;
+}
+
+@mixin interaction--niveau2 {
+    background: transparent;
+    color: $couleur-interaction2__texte;
+    text-decoration: underline;
+}
+
+@mixin focus-visible {
+    outline: 3px solid $couleur-interaction__outline--fv;
+    outline-offset: 3px;
+    background-color: $couleur-interaction__fond--fv;
+    color: $couleur-interaction__color--fv;
+    text-decoration: none;
+}

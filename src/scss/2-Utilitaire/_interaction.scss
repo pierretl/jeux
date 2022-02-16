@@ -1,0 +1,117 @@
+.btn {
+    @include interaction;
+    @include interaction--niveau1;
+}
+
+
+
+
+////////////////////////////////////////////////
+.lien {
+    @include interaction;
+    @include interaction--niveau2;
+}
+
+.lien:hover,
+.lien:focus {
+    color: $couleur-interaction2__texte--hover;
+    cursor: pointer;
+}
+
+.lien svg {
+    fill: $couleur-interaction2__texte;
+}
+.lien:hover svg,
+.lien:focus svg {
+    fill: $couleur-interaction2__texte--hover;
+}
+
+
+
+
+////////////////////////////////////////////////
+//%23 à la plce du # 
+//%23160b27 -> #160b27
+select {
+    @include interaction;
+    @include interaction--niveau1;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23160b27' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    appearance: none;
+}
+
+[data-mode=light] select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee6fe' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+
+
+////////////////////////////////////////////////
+$switch-hauteur: rem-calc(22);
+$switch-marge: rem-calc(2);
+
+.switch {
+    position: absolute;
+    left: -9999rem;
+}
+
+.switch + label {
+    @include interaction;
+    @include interaction--niveau2;
+    display: inline-flex;
+    position: relative;
+    margin-right: 1.4rem;
+}
+.switch + label:hover {
+    cursor: pointer;
+}
+
+
+.switch + label div {
+    position: relative;
+    width: calc($switch-hauteur * 2);
+    height: $switch-hauteur;
+    background-color: $couleur-interaction1__fond;
+    border-radius: calc($switch-hauteur / 2);
+    margin-right: rem-calc(10);
+    margin-left: rem-calc(10);
+}
+
+.switch + label div:after {
+    content: '';
+    position: absolute;
+    margin: rem-calc(2);
+    display: block;
+    width: calc($switch-hauteur - ($switch-marge * 2));
+    height: calc($switch-hauteur - ($switch-marge * 2));
+    border-radius: calc(($switch-hauteur - $switch-marge)/2);
+    background-color: $couleur-interaction1__texte;
+    left: 0;
+    transition: left 0.2s ease;
+}
+
+.switch:checked + label div:after {
+    left: $switch-hauteur;
+}
+
+
+
+
+////////////////////////////////////////////////
+.btn:hover,
+.btn:focus,
+select:hover,
+select:focus
+{
+    background-color: $couleur-interaction1__fond--hover;
+    cursor: pointer;
+}
+
+.btn:focus-visible,
+.lien:focus-visible,
+select:focus-visible
+{
+    @include focus-visible;
+}
