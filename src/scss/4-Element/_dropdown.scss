@@ -1,0 +1,77 @@
+$dropdown-marge: 3px;
+$dropdown-bordure: 1px;
+
+
+
+
+.gap--crant {
+    gap: $gap;
+}
+.gap--crant li {
+    margin: $dropdown-marge + $dropdown-bordure;
+}
+
+
+
+.dropdown {
+    position: relative;
+    border-top-left-radius: $taille-crant;
+    border-top-right-radius: $taille-crant;
+    border: 1px solid transparent;
+    border-width: $dropdown-bordure $dropdown-bordure 0;
+    border-color: transparent;
+    border-style: solid;
+    padding: $dropdown-marge;
+    background-color: $couleur-fond;
+}
+
+.dropdown.--ouvert {
+    border-color: $couleur-bordure;
+}
+
+
+
+
+.dropdown button {
+    position: relative;
+    padding: $dropdown-marge;
+}
+
+
+
+
+.dropdown button:before {
+    content: '⏷';
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+}
+.dropdown button:not([class*="code"]):before {
+    color: $couleur-texte;
+}
+[data-mode=light] .dropdown button.code8:before {
+    color: #{indecision(1)};
+}
+
+
+
+
+.dropdown ul {
+    position: absolute;
+    top: 100%;
+    left: -$dropdown-bordure;
+    padding: ($dropdown-marge + 8px) $dropdown-marge $dropdown-marge;  
+    border-bottom-left-radius: $taille-crant;
+    border-bottom-right-radius: $taille-crant;
+    border-width: 0 $dropdown-bordure $dropdown-bordure;
+    border-color: $couleur-bordure;
+    border-style: solid;
+    background-color: $couleur-fond;
+}
+
+.dropdown li + li {
+    margin-top: $dropdown-marge;
+}
+

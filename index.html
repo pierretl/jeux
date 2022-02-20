@@ -47,15 +47,15 @@
                 <span class="text-exergue">Essai</span>
             </div>
             <div class="grow">
-                <ol class="reset dechiffreur d-flex ai-c gap p bt br bb">
-                    <li class="crant --passer" style="background:var(--code1)"></li>
-                    <li class="crant --passer" style="background:var(--code2)"></li>
-                    <li class="crant --passer" style="background:var(--code3)"></li>
-                    <li class="crant --passer" style="background:var(--code4)"></li>
-                    <li class="crant --passer" style="background:var(--code5)"></li>
-                    <li class="crant --passer" style="background:var(--code6)"></li>
-                    <li class="crant --passer" style="background:var(--code7)"></li>
-                    <li class="crant --passer" style="background:var(--code8)"></li>
+                <ol class="reset dechiffreur d-flex ai-c gap--crant p bt br bb">
+                    <li class="crant code1"></li>
+                    <li class="crant code2"></li>
+                    <li class="crant code3"></li>
+                    <li class="crant code4"></li>
+                    <li class="crant code5"></li>
+                    <li class="crant code6"></li>
+                    <li class="crant code7"></li>
+                    <li class="crant code8"></li>
                 </ol>
                 <span class="text-exergue">Codes</span>
             </div>
@@ -102,11 +102,11 @@
                     03
                 </div>
                 <div class="grow d-flex ai-c p">
-                    <ol class="reset d-flex ai-c gap">
-                        <li class="crant --future"></li>
-                        <li class="crant --future"></li>
-                        <li class="crant --future"></li>
-                        <li class="crant --future"></li>
+                    <ol class="reset d-flex ai-c gap--crant">
+                        <li class="crant"></li>
+                        <li class="crant"></li>
+                        <li class="crant"></li>
+                        <li class="crant"></li>
                     </ol>
                     &nbsp;(Future)
                 </div>
@@ -116,15 +116,139 @@
                     02
                 </div>
                 <div class="grow d-flex ai-c p">
-                    <ol class="reset">
-                        <li class="crant">
-                            <button></button>
+                    <ol class="reset d-flex gap">
+                        <li class="dropdown">
+                            <button class="crant js_dropdown" aria-expanded="false"></button>
                             <ul class="reset hide">
-                                <li>color</li>
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code1 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code2 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code3 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code4 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code5 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code6 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code7 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown --ouvert">
+                            <button class="crant code8 js_dropdown" aria-expanded="true"></button>
+                            <ul class="reset">
+                                <li class="crant code1"></li>
+                                <li class="crant code2"></li>
+                                <li class="crant code3"></li>
+                                <li class="crant code4"></li>
+                                <li class="crant code5"></li>
+                                <li class="crant code6"></li>
+                                <li class="crant code7"></li>
+                                <li class="crant code8"></li>
                             </ul>
                         </li>
                     </ol>
-                    &nbsp;(Présent) ------------------------------------------------------------- WIP
+                    &nbsp;(Présent)
                 </div>
                 <div class="p d-flex ai-c">
                     <button class="btn">Valider</button>
@@ -135,15 +259,15 @@
                     01
                 </div>
                 <div class="grow d-flex ai-c p">
-                    <ol class="reset d-flex ai-c gap">
-                        <li class="crant --passer" style="background:var(--code1)"></li>
-                        <li class="crant --passer" style="background:var(--code2)"></li>
-                        <li class="crant --passer" style="background:var(--code3)"></li>
-                        <li class="crant --passer" style="background:var(--code4)"></li>
-                        <li class="crant --passer" style="background:var(--code5)"></li>
-                        <li class="crant --passer" style="background:var(--code6)"></li>
-                        <li class="crant --passer" style="background:var(--code7)"></li>
-                        <li class="crant --passer" style="background:var(--code8)"></li>
+                    <ol class="reset d-flex ai-c gap--crant">
+                        <li class="crant code1"></li>
+                        <li class="crant code2"></li>
+                        <li class="crant code3"></li>
+                        <li class="crant code4"></li>
+                        <li class="crant code5"></li>
+                        <li class="crant code6"></li>
+                        <li class="crant code7"></li>
+                        <li class="crant code8"></li>
                     </ol>
                     &nbsp;(Passer)
                 </div>

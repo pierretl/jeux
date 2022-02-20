@@ -1,12 +1,26 @@
 $taille-crant: 2rem;
 
-.crant.--future,
-.crant.--passer {
+.crant {
     width: $taille-crant;
     height:$taille-crant;
     border-radius: $taille-crant;
+    border: 1px dashed transparent;
 }
 
-.crant.--future {
-    border: 1px dashed $couleur-interaction1__fond;
+.crant:not([class*="code"]) {
+    border-color: $couleur-interaction1__fond;
+    background-color: transparent;
+}
+
+.crant.code1 {background-color: var(--code1)}
+.crant.code2 {background-color: var(--code2)}
+.crant.code3 {background-color: var(--code3)}
+.crant.code4 {background-color: var(--code4)}
+.crant.code5 {background-color: var(--code5)}
+.crant.code6 {background-color: var(--code6)}
+.crant.code7 {background-color: var(--code7)}
+.crant.code8 {background-color: var(--code8)}
+
+button.crant:hover {
+    cursor: pointer;
 }

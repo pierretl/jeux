@@ -2,3 +2,5 @@
     $remValue: calc($value / 16) + rem; 
     @return $remValue;
 }
+
+$gap: 5px;
