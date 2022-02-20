@@ -24,15 +24,21 @@ body {
     padding: 0;
 }
 
-dt,dd {
-    display: inline-block;
-    width: 49%;
-}
 dt {
-    text-align: right;
-    font-weight: 700;
+    float: left;
+    clear: left;
+    margin-right: rem-calc(10);
 }
 dd {
-    margin: 0;
-    padding-left: rem-calc(10);
+    color: $couleur-texte-exergue;
+}
+
+h1,
+h2 {
+    margin-bottom: 0;
+    color: $couleur-texte-exergue;
+}
+
+h1 + p {
+    margin-top: 0;
 }

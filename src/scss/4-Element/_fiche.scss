@@ -5,16 +5,19 @@
 
 
 .fiche {
-    width: rem-calc(14);
-    height: rem-calc(14);
+    width: rem-calc(16);
+    height: rem-calc(16);
     border-radius: 50%;
+    border: 1px dashed $couleur-fiche-n;
 }
 
 .fiche.--b {
-    background-color: white;
-    border: 1px solid $couleur-bordure;
+    background-color: $couleur-fiche-b;
+    border-color: $couleur-fiche-n;
+    border-style: solid;
 }
 
 .fiche.--n {
-    background-color: black;
+    background-color: $couleur-fiche-n;
+    border-color: $couleur-fiche-n;
 }

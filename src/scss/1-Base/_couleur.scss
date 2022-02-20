@@ -1,41 +1,57 @@
-$couleur1 :      #160b27;
-$couleur2 :      #3e4768;
-$couleur3 :      #8e98b9;
-$couleur4 :      #dee6fe;
-$couleur5 :      #f3c41c;
-$couleur6 :      #f98617;
-$couleur7 :      #d42c4f;
-$couleur8 :      #5f0267;
-$couleur9 :      #4a10e8;
-$couleur10 :     #2197f0;
-$couleur11 :     #52daf7;
-$couleur12 :     #bb4d11;
-$couleur13 :     #ed7fb8;
-$couleur14 :     #30fca6;
-$couleur15 :     #17ba7d;
-$couleur16 :     #056244;
-
-
+$indecisionPalette: (
+    1:      #fff4e0,//interface,code
+    2:      #8fcccb,//code
+    3:      #449489,
+    4:      #285763,
+    5:      #2f2b5c,
+    6:      #4b3b9c,
+    7:      #457cd6,//code
+    8:      #f2b63d,//code
+    9:      #d46e33,//code
+    10:     #e34262,//code
+    11:     #94353d,
+    12:     #57253b,//interface
+    13:     #9c656c,//interface,code
+    14:     #d1b48c,//interface
+    15:     #b4ba47,//code
+    16:     #6d8c32,
+    17:     #2c1b2e//interface
+);
+@function indecision($color) {
+    @return map-get($indecisionPalette, $color);
+}
 
 :root {
-    --couleur1: #{$couleur4};
-    --couleur2: #{$couleur3};
-    --couleur3: #{$couleur2};
-    --couleur4: #{$couleur1};
+    --couleur1:     #{indecision(1)};
+    --couleur2:     #{indecision(14)};
+    --couleur3:     #{indecision(13)};
+    --couleur4:     #{indecision(17)};
+
+    --code1:     #{indecision(10)};
+    --code2:     #{indecision(7)};
+    --code3:     #{indecision(2)};
+    --code4:     #{indecision(15)};
+    --code5:     #{indecision(8)};
+    --code6:    #{indecision(9)};
+    --code7:    #{indecision(13)};
+    --code8:    #{indecision(1)};
 }
 
 [data-mode=light] {
-    --couleur1: #{$couleur1};
-    --couleur2: #{$couleur2};
-    --couleur3: #{$couleur3};
-    --couleur4: #{$couleur4};
+    --couleur1:     #{indecision(17)};
+    --couleur2:     #{indecision(12)};
+    --couleur3:     #{indecision(14)};
+    --couleur4:     #{indecision(1)};
+
+    --code8:    #{indecision(17)};
 }
 
 
 
-$couleur-fond :    var(--couleur4);
-$couleur-texte :   var(--couleur2);
-$couleur-bordure : var(--couleur3);
+$couleur-fond :             var(--couleur4);
+$couleur-texte :            var(--couleur2);
+$couleur-texte-exergue :    var(--couleur1);
+$couleur-bordure :          var(--couleur3);
 
 $couleur-interaction__fond--fv :    var(--couleur1);
 $couleur-interaction__outline--fv : var(--couleur1);
@@ -48,7 +64,6 @@ $couleur-interaction1__fond--hover :    var(--couleur1);
 $couleur-interaction2__texte :          var(--couleur2);
 $couleur-interaction2__texte--hover :   var(--couleur1);
 
-$couleur-fiche-n :  var(--couleur1);
-$couleur-fiche-b :  var(--couleur4);
-
-
+$couleur-fiche-fond :   indecision(14);
+$couleur-fiche-n :      indecision(17);
+$couleur-fiche-b :      indecision(1);

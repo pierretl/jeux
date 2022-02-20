@@ -1,4 +1,4 @@
-const COULEURS = ["limegreen", "deepskyblue", "firebrick", "gold", "darkorange", "hotpink", "brown"];
+const COULEURS = ["limegreen", "deepskyblue", "firebrick", "gold", "darkorange", "hotpink", "brown", "black"];
 let inputTirage = document.getElementById('tirage');
 
 

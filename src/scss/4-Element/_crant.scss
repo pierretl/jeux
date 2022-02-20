@@ -1,0 +1,12 @@
+$taille-crant: 2rem;
+
+.crant.--future,
+.crant.--passer {
+    width: $taille-crant;
+    height:$taille-crant;
+    border-radius: $taille-crant;
+}
+
+.crant.--future {
+    border: 1px dashed $couleur-interaction1__fond;
+}

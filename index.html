@@ -37,27 +37,57 @@
 
     <section class="hide js_ecran-regles">
         <h1>Déchiffrez le code secret</h1>
-        <p>Découvrir les couleurs et la disposition exacte du code secret</p>
-        <div class="d-flex bt bx bb">
-            <div class="p d-flex ai-c br">
-                Numéro de l'essai
+        <p class="mb2">Découvrir les couleurs et la disposition exacte du code secret</p>
+        
+        <div class="d-flex mb2">
+            <div style="min-width:5rem;">
+                <div class="dechiffreur p d-flex ai-c bt bx bb">
+                    01
+                </div>
+                <span class="text-exergue">Essai</span>
             </div>
-            <div class="grow d-flex ai-c p">
-                Fiche-codages
+            <div class="grow">
+                <ol class="reset dechiffreur d-flex ai-c gap p bt br bb">
+                    <li class="crant --passer" style="background:var(--code1)"></li>
+                    <li class="crant --passer" style="background:var(--code2)"></li>
+                    <li class="crant --passer" style="background:var(--code3)"></li>
+                    <li class="crant --passer" style="background:var(--code4)"></li>
+                    <li class="crant --passer" style="background:var(--code5)"></li>
+                    <li class="crant --passer" style="background:var(--code6)"></li>
+                    <li class="crant --passer" style="background:var(--code7)"></li>
+                    <li class="crant --passer" style="background:var(--code8)"></li>
+                </ol>
+                <span class="text-exergue">Codes</span>
             </div>
-            <div class="p d-flex ai-c">
-                Fiche-réponses
+            <div>
+                <div class="dechiffreur d-flex ai-c p bt br bb">  
+                    <ul class="reset p d-flex ai-c gap wrap conteneur-fiche">
+                        <li class="fiche --n"></li>
+                        <li class="fiche --b"></li>
+                        <li class="fiche"></li>
+                    </ul> 
+                </div>
+                <span class="text-exergue">Réponses</span>
             </div>
         </div>
-        <p>L'ordre des fiches-réponses ne correspond pas à celle des fiches-codages</p>
-        <dl>
-            <dt>Fiche-réponses noires :</dt>
+
+        <h2>Essai :</h2>
+        Son nombre varie en fonction de la difficulté
+
+        <h2>Codes :</h2>
+        Le nombre de &laquo;codes&raquo; et le nombre de couleurs varient en fonction de la difficulté
+
+        <h2>Réponses :</h2>
+        Leur ordre ne correspond pas à celle des &laquo;codes&raquo;, elle apparaisse dans l'ordre :
+        <dl class="mb2">
+            <dt>Noires :</dt>
             <dd>Bonne couleur, bien placé</dd>
-            <dt>Fiche-réponses blanches :</dt>
+            <dt>Blanc :</dt>
             <dd>Bonne couleur, <strong>mal</strong> placé</dd>
-            <dt>Fiches-réponses manquantes :</dt>
+            <dt>Contour pointillé :</dt>
             <dd>Couleur incorrecte</dd>
         </dl>
+        
         <div class="text-center">
             <button class="btn js_fermer-regles">
                 J'ai compris, fermer les régles
@@ -67,29 +97,62 @@
 
     <section class="js_ecran-dechiffreur">
         <ol class="reset bb">
-            <li class="d-flex bt bx">
+            <li class="d-flex dechiffreur bt bx">
+                <div class="p d-flex ai-c br">
+                    03
+                </div>
+                <div class="grow d-flex ai-c p">
+                    <ol class="reset d-flex ai-c gap">
+                        <li class="crant --future"></li>
+                        <li class="crant --future"></li>
+                        <li class="crant --future"></li>
+                        <li class="crant --future"></li>
+                    </ol>
+                    &nbsp;(Future)
+                </div>
+            </li>
+            <li class="d-flex dechiffreur bt bx">
                 <div class="p d-flex ai-c br">
                     02
                 </div>
                 <div class="grow d-flex ai-c p">
-                    select custom
+                    <ol class="reset">
+                        <li class="crant">
+                            <button></button>
+                            <ul class="reset hide">
+                                <li>color</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    &nbsp;(Présent) ------------------------------------------------------------- WIP
                 </div>
                 <div class="p d-flex ai-c">
                     <button class="btn">Valider</button>
                 </div>
             </li>
-            <li class="d-flex bt bx">
+            <li class="d-flex dechiffreur bt bx">
                 <div class="p d-flex ai-c br">
                     01
                 </div>
                 <div class="grow d-flex ai-c p">
-                    select custom
+                    <ol class="reset d-flex ai-c gap">
+                        <li class="crant --passer" style="background:var(--code1)"></li>
+                        <li class="crant --passer" style="background:var(--code2)"></li>
+                        <li class="crant --passer" style="background:var(--code3)"></li>
+                        <li class="crant --passer" style="background:var(--code4)"></li>
+                        <li class="crant --passer" style="background:var(--code5)"></li>
+                        <li class="crant --passer" style="background:var(--code6)"></li>
+                        <li class="crant --passer" style="background:var(--code7)"></li>
+                        <li class="crant --passer" style="background:var(--code8)"></li>
+                    </ol>
+                    &nbsp;(Passer)
                 </div>
                 <div class="p">  
                     <ul class="reset p d-flex ai-c gap wrap conteneur-fiche">
                         <li class="fiche --n"></li>
                         <li class="fiche --b"></li>
                         <li class="fiche --b"></li>
+                        <li class="fiche"></li>
                         <li class="fiche"></li>
                     </ul>  
                 </div>

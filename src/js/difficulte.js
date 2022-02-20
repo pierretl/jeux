@@ -13,7 +13,7 @@ const DIFFICULTE = {
     'Difficile' : {
         crant :     5,
         nbEssai :   12,
-        nbCouleur : 7
+        nbCouleur : 8
     }
 };
 
