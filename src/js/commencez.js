@@ -19,6 +19,14 @@ BTN_COMMENCER.addEventListener('click', () => {
    let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
    tirage(difficulteChoisi);
 
+   //Créer le formulaire de validation
+   formulaire(
+    DIFFICULTE[difficulteChoisi].crant,
+    DIFFICULTE[difficulteChoisi].nbCouleur,
+    CONTENEUR_FORMULAIRE,
+    //'essaiNumero a faire'
+   );
+
    //initialise le dropdown
 
    //Créer le plateau

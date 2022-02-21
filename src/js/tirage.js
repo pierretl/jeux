@@ -1,5 +1,5 @@
-const COULEURS = ["limegreen", "deepskyblue", "firebrick", "gold", "darkorange", "hotpink", "brown", "black"];
-let inputTirage = document.getElementById('tirage');
+const COULEURS = ["code1", "code2", "code3", "code4", "code5", "code6", "code7", "code8"];
+const INPUT_TIRAGE = document.getElementById('tirage');
 
 
 
@@ -28,5 +28,5 @@ let tirage = (difficulteChoisi) => {
     }
 
     //stocke le tirage
-    inputTirage.value = tirage;
+    INPUT_TIRAGE.value = tirage;
 }
