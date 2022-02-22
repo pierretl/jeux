@@ -32,15 +32,11 @@ $dropdown-bordure: 1px;
 
 
 
-.dropdown button {
+.dropdown__label {
     position: relative;
     padding: $dropdown-marge;
 }
-
-
-
-
-.dropdown button:before {
+.dropdown__label:before {
     content: '⏷';
     position: absolute;
     top:40%;
@@ -48,10 +44,10 @@ $dropdown-bordure: 1px;
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
 }
-.dropdown button:not([class*="code"]):before {
+.dropdown__label:not([class*="code"]):before {
     color: $couleur-texte;
 }
-[data-mode=light] .dropdown button.code8:before {
+[data-mode=light] .dropdown__label.code8:before {
     color: #{indecision(1)};
 }
 

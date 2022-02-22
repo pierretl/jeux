@@ -21,15 +21,20 @@ BTN_COMMENCER.addEventListener('click', () => {
 
    //Créer le formulaire de validation
    formulaire(
-    DIFFICULTE[difficulteChoisi].crant,
-    DIFFICULTE[difficulteChoisi].nbCouleur,
-    CONTENEUR_FORMULAIRE,
-    //'essaiNumero a faire'
+        DIFFICULTE[difficulteChoisi].crant,
+        DIFFICULTE[difficulteChoisi].nbCouleur,
+        CONTENEUR_FORMULAIRE,
+        //essaiNumero
    );
 
    //initialise le dropdown
 
    //Créer le plateau
+   plateau(
+        DIFFICULTE[difficulteChoisi].nbEssai, 
+        DIFFICULTE[difficulteChoisi].crant, 
+        //essaiNumero
+   );
 
 
 });

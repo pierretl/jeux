@@ -1,18 +1,25 @@
-const DROPDOWNS = document.querySelectorAll('.js_dropdown');
+// Affiche/masque la liste déroulante
+function dropdown(e) {
 
-for (const DROPDOWN of DROPDOWNS) {
-    DROPDOWN.addEventListener('click', () => {
+    if ( e.getAttribute('aria-expanded') === 'true' ) {
+        e.setAttribute('aria-expanded', 'false');
+        e.parentNode.classList.remove('--ouvert');
+        e.parentNode.querySelector('ul').classList.add('hide');
+    } else {
+        e.setAttribute('aria-expanded', 'true');
+        e.parentNode.classList.add('--ouvert');
+        e.parentNode.querySelector('ul').classList.remove('hide');
+    }
 
-        if ( DROPDOWN.getAttribute('aria-expanded') === 'true' ) {
-            DROPDOWN.setAttribute('aria-expanded', 'false');
-            DROPDOWN.parentNode.classList.remove('--ouvert');
-            DROPDOWN.parentNode.querySelector('ul').classList.add('hide');
-        } else {
-            DROPDOWN.setAttribute('aria-expanded', 'true');
-            DROPDOWN.parentNode.classList.add('--ouvert');
-            DROPDOWN.parentNode.querySelector('ul').classList.remove('hide');
-        }
+}
 
-    })
-};
+// Récupère la couleur selectionné
+function choixCouleur(e, idCouleur) {
+    let labelDropdown = e.parentNode.parentNode.parentNode.querySelector('.js_dropdown-label');
+    
+    // Affiche la couleur dans le label
+    labelDropdown.classList.add(`code${idCouleur}`);
 
+    // Ferme la dropdown
+    dropdown(labelDropdown);
+}

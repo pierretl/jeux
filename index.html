@@ -10,7 +10,7 @@
 
     <input id="tirage" type="hiddenXXX" value="" style="width:100%">
     <div class="d-flex js_form"></div>
-    
+
     
     <ul class="reset text-center js_ecran-commencez">
         <li class="mb">
@@ -98,62 +98,73 @@
     </section>
 
 
-    <ol class="reset bb js_ecran-dechiffreur hide"></ol>
+    <ol class="reset bb js_ecran-dechiffreur hide">
+        <template id="manche">
+            {{#dataList}}
+                <li class="d-flex dechiffreur bt bx">
+                    <div class="p d-flex ai-c br js_dechiffreur__numero">
+                        {{essaiNumero}}
+                    </div>
+                    <div class="grow d-flex ai-c p js_dechiffreur__content">
+                        {{#ifEquals type "Futur"}}
+                            <ol class="reset d-flex ai-c gap--crant">
+                                {{#repeat nombreCrant}}
+                                    <li class="crant"></li>
+                                {{/repeat}}
+                            </ol>
+                        {{/ifEquals}}
+                        {{#ifEquals type "Present"}}
+                            <ol class="reset d-flex gap">
+                                {{#dropdown}}
+                                    <li class="dropdown">
+                                        <button class="crant dropdown__label js_dropdown-label" aria-expanded="false" onClick="dropdown(this)"></button>
+                                        <ul class="reset hide">
+                                            {{#crant}}
+                                                <li>
+                                                    <button class="crant code{{idCouleur}}" onClick="choixCouleur(this, {{idCouleur}})"></button>
+                                                </li>
+                                            {{/crant}}
+                                        </ul>
+                                    </li>
+                                {{/dropdown}}
+                            </ol>
+                        {{/ifEquals}}
+                        {{#ifEquals type "Passer"}}
+                            <ol class="reset d-flex ai-c gap--crant">
+                                {{#essai}}
+                                    <li class="crant code{{idCouleur}}"></li>
+                                {{/essai}}
+                            </ol>
+                        {{/ifEquals}}
+                    </div>
+                    {{#ifEquals type "Present"}}
+                        <div class="p d-flex ai-c">
+                            <button class="btn">Valider</button>
+                        </div>
+                    {{/ifEquals}}
+                    {{#ifEquals type "Passer"}}
+                        <div class="dechiffreur d-flex ai-c p">
+                            <ul class="reset p d-flex ai-c gap wrap conteneur-fiche">
+                                {{#correction}}
+                                    <li class="fiche{{ficheType}}"></li>
+                                {{/correction}}
+                            </ul>
+                        </div>
+                    {{/ifEquals}}
+                </li>
+            {{/dataList}}
+        </template>
+    </ol>
 
-    <template class="js_dechiffreur_essai">
-        <li class="d-flex dechiffreur bt bx">
-            <div class="p d-flex ai-c br js_dechiffreur__numero"></div>
-            <div class="grow d-flex ai-c p js_dechiffreur__content"></div>
-            <!-- valider / correction -->
-        </li>
-    </template>
 
-    <template class="js_dechiffreur_futur-conteneur">
-        <ol class="reset d-flex ai-c gap--crant"></ol>
-    </template>
 
-    <template class="js_dechiffreur_futur-crant">
-        <li class="crant"></li>
-    </template>
-
-    <template class="js_dechiffreur_present-conteneur">
-        <ol class="reset d-flex gap"></ol>
-    </template>
-
-    <template class="js_dechiffreur_present-crant">
-        <li class="dropdown">
-            <button class="crant code1 js_dropdown" aria-expanded="false"></button>
-            <ul class="reset hide js_dechiffreur__present__code"></ul>
-        </li>
-    </template>
-
-    <template class="js_dechiffreur_present-btn">
-        <div class="p d-flex ai-c">
-            <button class="btn">Valider</button>
-        </div>
-    </template>
-
-    <template class="js_dechiffreur_passer-conteneur">
-        <ol class="reset d-flex ai-c gap--crant js_dechiffreur__present__code"></ol>
-    </template>
-
-    <template class="js_dechiffreur_passer-correction-conteneur">
-        <ul class="reset p d-flex ai-c gap wrap conteneur-fiche"></ul>
-    </template>
-
-    <template class="js_dechiffreur_passer-correction-fiche">
-        <li class="fiche" data-n="--n" data-b="--b"></li>
-    </template>
-
-    <template class="js_dechiffreur-code">
-        <li class="crant code1"></li>
-    </template>
 
     <section class="text-center js_ecran-fin">
         <p class="js_message-fin">Message</p>
         <button class="btn js_btn-recommencez">Recommencez</button>
     </section>
 
+    <script src="handlebars.js"></script>
     <script src="script.min.js"></script>
 
     <svg class="hide" width="0" height="0" aria-hidden="true" focusable="false">
