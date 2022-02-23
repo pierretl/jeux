@@ -1,3 +1,8 @@
 .dechiffreur {
     min-height: rem-calc(58);
 }
+
+.dechiffreur.--aide {
+    min-height: rem-calc(62);
+    margin-bottom: rem-calc(5);
+}
