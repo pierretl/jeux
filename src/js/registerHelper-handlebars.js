@@ -10,3 +10,15 @@ Handlebars.registerHelper('repeat', function(n, block) {
         accum += block.fn(i);
     return accum;
 });
+
+// Ajoute un 0 si le chiffre est inférieur à 10
+Handlebars.registerHelper('addZero', function(n, block) {
+    let longueur = n.toString().length;
+    let valeur = '';
+    if (longueur == 1){
+        valeur = '0'+n;
+    } else {
+        valeur = n;
+    }
+    return valeur;
+});

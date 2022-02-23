@@ -104,7 +104,9 @@
         {{#manche}}
             <li class="d-flex dechiffreur bt bx">
                 <div class="p d-flex ai-c br js_dechiffreur__numero">
-                    {{essaiNumero}}
+                    {{#addZero essaiNumero}}
+                         {{essaiNumero}}
+                    {{/addZero}}
                 </div>
                 <div class="grow d-flex ai-c p js_dechiffreur__content">
                     {{#ifEquals type "Futur"}}
