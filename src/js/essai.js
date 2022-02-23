@@ -7,7 +7,14 @@ function essaiCombinaison(essaiNumero) {
     let combinaison = [];
     let selects = document.querySelectorAll(".essai-" + essaiNumero);
     for (var e = 0; e < selects.length; e++) {
-        combinaison.push(selects[e].value);
+
+        // si une valeur n'est pas saisi, finir le script 
+        if ( selects[e].value == "" ) {
+            return false;
+        } else {
+            combinaison.push(selects[e].value);
+        }
+
     }
 
     // Vérification

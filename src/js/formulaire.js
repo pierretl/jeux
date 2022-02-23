@@ -9,6 +9,11 @@ function formulaire(crant, couleurs, formulaire, essaiNumero) {
 
     // création des options
     let options = '';
+
+    // Option vide par défaut
+    options += `<option value="">Selectionnez</option>`;
+
+    // Ajout des options selon les couleurs
     for (let i = 1; i < (couleurs+1); i++) {
         options += `<option value="code${i}">Code ${i}</option>`;
     }

@@ -14,9 +14,10 @@ function dropdown(e) {
 }
 
 // Récupère la couleur selectionné
-function choixCouleur(e, idCouleur) {
+function choixCouleur(e, idCouleur, idItem) {
     let labelDropdown = e.parentNode.parentNode.parentNode.querySelector('.js_dropdown-label');
     
+    // Apercus de la couleru selectionner
     if ( labelDropdown.dataset.code != '' ) {
         //  Met a jour la couleur du bouton
         labelDropdown.classList.remove(labelDropdown.dataset.code);
@@ -27,6 +28,9 @@ function choixCouleur(e, idCouleur) {
         labelDropdown.classList.add(`code${idCouleur}`);
         labelDropdown.dataset.code = `code${idCouleur}`;
     }
+
+    // Saisi la valeur dans le formulaire avant correction
+    CONTENEUR_FORMULAIRE.children[idItem].value = `code${idCouleur}`;
 
     // Ferme la dropdown
     dropdown(labelDropdown);

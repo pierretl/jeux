@@ -120,11 +120,18 @@
                         <ol class="reset d-flex gap">
                             {{#dropdown.crant}}
                                 <li class="dropdown">
-                                    <button class="crant dropdown__label js_dropdown-label" aria-expanded="false" onClick="dropdown(this)" data-code=""></button>
+                                    <button class="crant dropdown__label js_dropdown-label"
+                                            aria-expanded="false"
+                                            onClick="dropdown(this)"
+                                            data-code=""
+                                            data-item="{{idItem}}">
+                                    </button>
                                     <ul class="reset hide">
                                         {{#idCouleur}}
                                             <li>
-                                                <button class="crant code{{this}}" onClick="choixCouleur(this, {{this}})"></button>
+                                                <button class="crant code{{this}}"
+                                                        onClick="choixCouleur(this, {{this}}, {{../idItem}})">
+                                                </button>
                                             </li>
                                         {{/idCouleur}}
                                     </ul>

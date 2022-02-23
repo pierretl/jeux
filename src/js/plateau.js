@@ -21,6 +21,7 @@ function plateau(nbEssai, nbCrant, nbCouleur, essaiNumero) {
                 PLATEAU.manche[i].dropdown.crant[j].idCouleur = [];
 
                 for (let k = 0; k < nbCouleur; k++) {
+                    PLATEAU.manche[i].dropdown.crant[j].idItem = j;
                     PLATEAU.manche[i].dropdown.crant[j].idCouleur[k] = k+1;
                 }
             }
