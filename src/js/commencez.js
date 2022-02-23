@@ -28,7 +28,8 @@ BTN_COMMENCER.addEventListener('click', () => {
     //Créer le plateau
     plateau(
         DIFFICULTE[difficulteChoisi].nbEssai, 
-        DIFFICULTE[difficulteChoisi].crant, 
+        DIFFICULTE[difficulteChoisi].crant,
+        DIFFICULTE[difficulteChoisi].nbCouleur, 
         //essaiNumero
     );
 

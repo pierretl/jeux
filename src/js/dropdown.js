@@ -17,8 +17,16 @@ function dropdown(e) {
 function choixCouleur(e, idCouleur) {
     let labelDropdown = e.parentNode.parentNode.parentNode.querySelector('.js_dropdown-label');
     
-    // Affiche la couleur dans le label
-    labelDropdown.classList.add(`code${idCouleur}`);
+    if ( labelDropdown.dataset.code != '' ) {
+        //  Met a jour la couleur du bouton
+        labelDropdown.classList.remove(labelDropdown.dataset.code);
+        labelDropdown.classList.add(`code${idCouleur}`);
+        labelDropdown.dataset.code = `code${idCouleur}`;
+    } else {
+        // Affiche a couleur dans le bouton
+        labelDropdown.classList.add(`code${idCouleur}`);
+        labelDropdown.dataset.code = `code${idCouleur}`;
+    }
 
     // Ferme la dropdown
     dropdown(labelDropdown);

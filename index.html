@@ -118,18 +118,18 @@
                     {{/ifEquals}}
                     {{#ifEquals type "Present"}}
                         <ol class="reset d-flex gap">
-                            {{#dropdown}}
+                            {{#dropdown.crant}}
                                 <li class="dropdown">
-                                    <button class="crant dropdown__label js_dropdown-label" aria-expanded="false" onClick="dropdown(this)"></button>
+                                    <button class="crant dropdown__label js_dropdown-label" aria-expanded="false" onClick="dropdown(this)" data-code=""></button>
                                     <ul class="reset hide">
-                                        {{#crant}}
+                                        {{#idCouleur}}
                                             <li>
-                                                <button class="crant code{{idCouleur}}" onClick="choixCouleur(this, {{idCouleur}})"></button>
+                                                <button class="crant code{{this}}" onClick="choixCouleur(this, {{this}})"></button>
                                             </li>
-                                        {{/crant}}
+                                        {{/idCouleur}}
                                     </ul>
                                 </li>
-                            {{/dropdown}}
+                            {{/dropdown.crant}}
                         </ol>
                     {{/ifEquals}}
                     {{#ifEquals type "Passer"}}

@@ -1,6 +1,6 @@
 let PLATEAU = {manche:[]};
 
-function plateau(nbEssai, nbCrant, essaiNumero) {
+function plateau(nbEssai, nbCrant, nbCouleur, essaiNumero) {
 
     let numero = nbEssai;
 
@@ -13,6 +13,17 @@ function plateau(nbEssai, nbCrant, essaiNumero) {
         if ( i == (nbEssai - 1)) {
             //present
             PLATEAU.manche[i].type = "Present";
+            PLATEAU.manche[i].dropdown = [];
+            PLATEAU.manche[i].dropdown.crant = [];
+
+            for (let j = 0; j < nbCrant; j++) {
+                PLATEAU.manche[i].dropdown.crant[j] = [];
+                PLATEAU.manche[i].dropdown.crant[j].idCouleur = [];
+
+                for (let k = 0; k < nbCouleur; k++) {
+                    PLATEAU.manche[i].dropdown.crant[j].idCouleur[k] = k+1;
+                }
+            }
 
         } else {
             //futur
