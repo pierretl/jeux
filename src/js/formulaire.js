@@ -26,9 +26,6 @@ function formulaire(crant, couleurs, formulaire, essaiNumero) {
         n++;
     }
 
-    // Ajout bouton validation
-    selects += `<button onclick="essaiCombinaison(${essaiNumero})">Try this</button>`;
-
     // Ajout du formulaire à la page
     formulaire.innerHTML = selects;
 
