@@ -1,40 +1,35 @@
 const BTN_COMMENCER = document.querySelector('.js_btn-commencez');
 const ECRAN_COMMENCER = document.querySelector('.js_ecran-commencez');
+const ECRAN_DEBUG = document.querySelector('.js_debug');
 
 
 
 BTN_COMMENCER.addEventListener('click', () => {
-    /*
-  tirage(couleurs, crant);
-  ajoutEssai(crant, couleurs, formulaire, conteneurSelect);
-  bodyPlateau.classList.remove(classCssHide);
-  initDropdown(couleurs);
-  nouvelEssai(crant);
-    */
 
-   //Masque ecran commencez
-   ECRAN_COMMENCER.classList.add('hide');
+    //DEBUG DEV
+    ECRAN_DEBUG.classList.remove('hide');
+    ECRAN_RECOMMENCEZ.classList.remove('hide');
 
-   //Génére un tirage
-   let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
-   tirage(difficulteChoisi);
+    //Masque ecran commencez
+    ECRAN_COMMENCER.classList.add('hide');
 
-   //Créer le formulaire de validation
-   formulaire(
+    //Génére un tirage
+    let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
+    tirage(difficulteChoisi);
+
+    //Créer le formulaire de validation
+    formulaire(
         DIFFICULTE[difficulteChoisi].crant,
         DIFFICULTE[difficulteChoisi].nbCouleur,
         CONTENEUR_FORMULAIRE,
         //essaiNumero
-   );
+    );
 
-   //initialise le dropdown
-
-   //Créer le plateau
-   plateau(
+    //Créer le plateau
+    plateau(
         DIFFICULTE[difficulteChoisi].nbEssai, 
         DIFFICULTE[difficulteChoisi].crant, 
         //essaiNumero
-   );
-
+    );
 
 });

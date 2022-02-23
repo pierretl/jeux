@@ -1,21 +1,33 @@
+let PLATEAU = {manche:[]};
+
 function plateau(nbEssai, nbCrant, essaiNumero) {
 
-    /*
-    for (let i = nbEssai; i > 0; i--) {
+    let numero = nbEssai;
 
-        if ( i == 1) {
+    //initialise les datas PLATEAU
+    for (let i = 0; i < nbEssai; i++) {
+
+        PLATEAU.manche[i] = {};
+        PLATEAU.manche[i].essaiNumero = numero--;
+
+        if ( i == (nbEssai - 1)) {
             //present
+            PLATEAU.manche[i].type = "Present";
+
         } else {
             //futur
+            PLATEAU.manche[i].type = "Futur";
+            PLATEAU.manche[i].nombreCrant = nbCrant;
         }
         
     }
-    */
 
-    //Demo du plateau
+    console.log(PLATEAU);
+
+    // Construit le HTML du PLATEAU
     var dechiffreur = document.querySelector('#manche').innerHTML;
     var compile = Handlebars.compile(dechiffreur);
-    document.querySelector('.js_ecran-dechiffreur').innerHTML = compile(dataPlateau);
+    ECRAN_DECHIFFREUR.innerHTML = compile(PLATEAU);
 
     // affiche le plateau
     ECRAN_DECHIFFREUR.classList.remove('hide');
@@ -23,27 +35,9 @@ function plateau(nbEssai, nbCrant, essaiNumero) {
 }
 
 
+/*
+data DEMO : passer , present, futur
 
-
-
-
-//utilitaire
-Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
-    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-});
-
-Handlebars.registerHelper('repeat', function(n, block) {
-    var accum = '';
-    for(var i = 0; i < n; ++i)
-        accum += block.fn(i);
-    return accum;
-});
-
-
-
-
-
-// data de demo
 var dataPlateau = {
     dataList:[
         {
@@ -103,3 +97,5 @@ var dataPlateau = {
         }
     ]
 };
+
+*/
