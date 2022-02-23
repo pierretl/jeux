@@ -99,7 +99,7 @@
     </section>
 
 
-    <ol class="reset bb js_ecran-dechiffreur hide"></ol>
+    <ol class="reset d-flex reverse bb js_ecran-dechiffreur hide"></ol>
     <template id="manche">
         {{#manche}}
             <li class="d-flex dechiffreur bt bx">
@@ -142,7 +142,7 @@
                     {{#ifEquals type "Passer"}}
                         <ol class="reset d-flex ai-c gap--crant">
                             {{#essai}}
-                                <li class="crant code{{idCouleur}}"></li>
+                                <li class="crant {{this}}"></li>
                             {{/essai}}
                         </ol>
                     {{/ifEquals}}
@@ -156,7 +156,7 @@
                     <div class="dechiffreur d-flex ai-c p">
                         <ul class="reset p d-flex ai-c gap wrap conteneur-fiche">
                             {{#correction}}
-                                <li class="fiche{{ficheType}}"></li>
+                                <li class="fiche{{this}}"></li>
                             {{/correction}}
                         </ul>
                     </div>

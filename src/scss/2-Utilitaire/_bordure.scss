@@ -4,7 +4,7 @@
 .br {
     border-right: 1px solid $couleur-bordure;
 }
-.bb {
+.bb:not(.hide) {
     border-bottom: 1px solid $couleur-bordure;
 }
 .bx {

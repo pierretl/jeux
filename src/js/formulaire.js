@@ -22,7 +22,7 @@ function formulaire(crant, couleurs, formulaire, essaiNumero) {
     let n = 0;
     let selects = ''
     while (n < crant) {
-        selects += `<select id="essai-${essaiNumero}-${n}" class="essai-${essaiNumero}">${options}</select>`;
+        selects += `<select id="crant-${n}" class="js_select">${options}</select>`;
         n++;
     }
 

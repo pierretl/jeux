@@ -4,8 +4,8 @@ function essaiCombinaison(essaiNumero) {
     let tirage = INPUT_TIRAGE.value.split(",");
 
     //recupération des données saisi
-    let combinaison = [];
-    let selects = document.querySelectorAll(".essai-" + essaiNumero);
+    var combinaison = [];
+    var selects = document.querySelectorAll(".js_select");
     for (var e = 0; e < selects.length; e++) {
 
         // si une valeur n'est pas saisi, finir le script 
@@ -17,16 +17,15 @@ function essaiCombinaison(essaiNumero) {
 
     }
 
-    // Vérification
+    // Correction
     if (JSON.stringify(combinaison) == JSON.stringify(tirage)) {
         gagne();
     } else {
 
-        //let correction = document.querySelector(".js--correction-" + essaiNumero);
         let nbNoir = 0;
         let nbBlanc = 0;
 
-        console.log("tirage : " + tirage + "\n combinaison : " + combinaison);
+        //console.log("tirage : " + tirage + "\n combinaison : " + combinaison);
 
         //--------------------------------------------------------------
         // Gestion des Noir : bonne couleur bien placé
@@ -55,7 +54,12 @@ function essaiCombinaison(essaiNumero) {
                 }
             }
         }
-    
+
         console.log("total noir : " + nbNoir + "\n total blanc : " + nbBlanc);
+
+        //--------------------------------------------------------------
+        //Met à jour le plateau
+        majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc);
+        
     }
 }

@@ -2,29 +2,15 @@ let PLATEAU = {manche:[]};
 
 function plateau(nbEssai, nbCrant, nbCouleur, essaiNumero) {
 
-    let numero = nbEssai;
-
     //initialise les datas PLATEAU
     for (let i = 0; i < nbEssai; i++) {
 
         PLATEAU.manche[i] = {};
-        PLATEAU.manche[i].essaiNumero = numero--;
+        PLATEAU.manche[i].essaiNumero = i + 1 ;
 
-        if ( i == (nbEssai - 1)) {
+        if ( i == 0) {
             //present
-            PLATEAU.manche[i].type = "Present";
-            PLATEAU.manche[i].dropdown = [];
-            PLATEAU.manche[i].dropdown.crant = [];
-
-            for (let j = 0; j < nbCrant; j++) {
-                PLATEAU.manche[i].dropdown.crant[j] = [];
-                PLATEAU.manche[i].dropdown.crant[j].idCouleur = [];
-
-                for (let k = 0; k < nbCouleur; k++) {
-                    PLATEAU.manche[i].dropdown.crant[j].idItem = j;
-                    PLATEAU.manche[i].dropdown.crant[j].idCouleur[k] = k+1;
-                }
-            }
+            setPresent(i);
 
         } else {
             //futur
@@ -34,16 +20,44 @@ function plateau(nbEssai, nbCrant, nbCouleur, essaiNumero) {
         
     }
 
-    console.log(PLATEAU);
-
     // Construit le HTML du PLATEAU
-    var dechiffreur = document.querySelector('#manche').innerHTML;
-    var compile = Handlebars.compile(dechiffreur);
-    ECRAN_DECHIFFREUR.innerHTML = compile(PLATEAU);
+    compileHanlebars();
 
     // affiche le plateau
     ECRAN_DECHIFFREUR.classList.remove('hide');
 
+}
+
+
+
+
+function setPresent(essaiNumero) {
+    let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
+    let nbCrant = DIFFICULTE[difficulteChoisi].crant;
+    let nbCouleur = DIFFICULTE[difficulteChoisi].nbCouleur;
+
+    PLATEAU.manche[essaiNumero].type = "Present";
+    PLATEAU.manche[essaiNumero].dropdown = [];
+    PLATEAU.manche[essaiNumero].dropdown.crant = [];
+
+    for (let j = 0; j < nbCrant; j++) {
+        PLATEAU.manche[essaiNumero].dropdown.crant[j] = [];
+        PLATEAU.manche[essaiNumero].dropdown.crant[j].idCouleur = [];
+
+        for (let k = 0; k < nbCouleur; k++) {
+            PLATEAU.manche[essaiNumero].dropdown.crant[j].idItem = j;
+            PLATEAU.manche[essaiNumero].dropdown.crant[j].idCouleur[k] = k+1;
+        }
+    }
+}
+
+
+
+
+function compileHanlebars(){
+    let dechiffreur = document.querySelector('#manche').innerHTML;
+    let compile = Handlebars.compile(dechiffreur);
+    ECRAN_DECHIFFREUR.innerHTML = compile(PLATEAU);
 }
 
 
