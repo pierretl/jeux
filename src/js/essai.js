@@ -22,6 +22,14 @@ function essaiCombinaison(essaiNumero) {
         gagne();
     } else {
 
+        // vérification si la manche est autorisé
+        let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
+        if (DIFFICULTE[difficulteChoisi].nbEssai == essaiNumero) {
+            perdu();
+            return false;
+        }
+
+
         let nbNoir = 0;
         let nbBlanc = 0;
 
