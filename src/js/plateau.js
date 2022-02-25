@@ -1,6 +1,6 @@
 let PLATEAU = {manche:[]};
 
-function plateau(nbEssai, nbCrant, nbCouleur, essaiNumero) {
+function plateau(nbEssai, nbCrant) {
 
     //initialise les datas PLATEAU
     for (let i = 0; i < nbEssai; i++) {
@@ -59,69 +59,3 @@ function compileHanlebars(){
     let compile = Handlebars.compile(dechiffreur);
     ECRAN_DECHIFFREUR.innerHTML = compile(PLATEAU);
 }
-
-
-/*
-data DEMO : passer , present, futur
-
-var dataPlateau = {
-    dataList:[
-        {
-            essaiNumero : "03",
-            type : "Futur",
-            nombreCrant : 4,
-        },
-        {
-            essaiNumero : "02",
-            type : "Present",
-            dropdown: [
-                {crant : [
-                    {idCouleur : 1},
-                    {idCouleur : 2},
-                    {idCouleur : 3},
-                    {idCouleur : 4},
-                    {idCouleur : 5},
-                ]},
-                {crant : [
-                    {idCouleur : 1},
-                    {idCouleur : 2},
-                    {idCouleur : 3},
-                    {idCouleur : 4},
-                    {idCouleur : 5},
-                ]},
-                {crant : [
-                    {idCouleur : 1},
-                    {idCouleur : 2},
-                    {idCouleur : 3},
-                    {idCouleur : 4},
-                    {idCouleur : 5},
-                ]},
-                {crant : [
-                    {idCouleur : 1},
-                    {idCouleur : 2},
-                    {idCouleur : 3},
-                    {idCouleur : 4},
-                    {idCouleur : 5},
-                ]},
-            ],
-        },
-        {
-            essaiNumero : "01",
-            type : "Passer",
-            essai: [
-                {idCouleur : 1},
-                {idCouleur : 2},
-                {idCouleur : 4},
-                {idCouleur : 3},
-            ],
-            correction: [
-                {ficheType : " --n"},
-                {ficheType : " --b"},
-                {ficheType : ""},
-                {ficheType : ""},
-            ],
-        }
-    ]
-};
-
-*/

@@ -21,16 +21,13 @@ BTN_COMMENCER.addEventListener('click', () => {
     formulaire(
         DIFFICULTE[difficulteChoisi].crant,
         DIFFICULTE[difficulteChoisi].nbCouleur,
-        CONTENEUR_FORMULAIRE,
-        //essaiNumero
+        CONTENEUR_FORMULAIRE
     );
 
     //Créer le plateau
     plateau(
         DIFFICULTE[difficulteChoisi].nbEssai, 
-        DIFFICULTE[difficulteChoisi].crant,
-        DIFFICULTE[difficulteChoisi].nbCouleur, 
-        //essaiNumero
+        DIFFICULTE[difficulteChoisi].crant
     );
 
 });

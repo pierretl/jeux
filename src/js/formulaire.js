@@ -1,11 +1,6 @@
 const CONTENEUR_FORMULAIRE =  document.querySelector('.js_form');
 
-function formulaire(crant, couleurs, formulaire, essaiNumero) {
-
-    // essai numéro
-    if (typeof essaiNumero === "undefined") {
-        var essaiNumero = 1;
-    }
+function formulaire(crant, couleurs, formulaire) {
 
     // création des options
     let options = '';
