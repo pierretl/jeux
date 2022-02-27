@@ -2,6 +2,10 @@
     min-height: rem-calc(58);
 }
 
+.dechiffreur:first-child {
+    border-bottom: 1px solid $couleur-bordure;
+}
+
 .dechiffreur__numero {
     box-shadow: 0 1px 0 0 $couleur-bordure;
 }
