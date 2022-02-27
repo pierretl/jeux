@@ -14,7 +14,7 @@ BTN_RECOMMENCER.addEventListener('click', () => {
     PLATEAU = {manche:[]};
 
     //Supprime le plateau
-    ECRAN_DECHIFFREUR.innerHTML = "";
+    DOM_PLATEAU.innerHTML = "";
 
     //Masque l'écran déchiffreur
     ECRAN_DECHIFFREUR.classList.add('hide');

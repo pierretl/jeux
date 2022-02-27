@@ -39,6 +39,6 @@ function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc) {
     //Mise à jour du font HTML
     compileHanlebars();
 
-    console.log(PLATEAU);
+    //console.log(PLATEAU);
 
 }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Masterm¿nd</title>
+    <title>MasterM¿nd</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="app">
 
     <div class="mb hide js_debug">
-        <input id="tirage" type="hiddenXXX" value="" style="width:100%">
+        <input id="tirage" type="hidden" value="" style="width:100%">
         <div class="js_form"></div>
     </div>
     
@@ -17,7 +17,7 @@
         <svg aria-hidden="true" focusable="false" class="logo">
             <use xlink:href="#logo"></use>
         </svg>
-        <span class="sr-only">Masterm¿nd</span>
+        <span class="sr-only">MasterM¿nd</span>
     </h1>
 
     <ul class="reset text-center js_ecran-commencez">
@@ -103,7 +103,9 @@
     </section>
 
 
-    <ol class="reset flex reverse bb js_ecran-dechiffreur hide"></ol>
+    <section class="js_ecran-dechiffreur hide">
+        <ol class="reset flex reverse bb js_plateau"></ol>
+    </section>
     <template id="manche">
         {{#manche}}
             <li class="flex wrap dechiffreur bt bx">

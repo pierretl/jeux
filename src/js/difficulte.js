@@ -1,10 +1,12 @@
 const DOM_DIFFICULTE_SELECT = document.getElementById('difficulte');
 const DIFFICULTE = {
+    /*
     'Debug' : {
         crant :     3,
         nbEssai :   3,
         nbCouleur : 3
     },
+    */
     'Normal' : {
         crant :     4,
         nbEssai :   10,

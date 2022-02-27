@@ -7,8 +7,8 @@ const ECRAN_DEBUG = document.querySelector('.js_debug');
 BTN_COMMENCER.addEventListener('click', () => {
 
     //DEBUG DEV
-    ECRAN_DEBUG.classList.remove('hide');
-    ECRAN_RECOMMENCEZ.classList.remove('hide');
+    //ECRAN_DEBUG.classList.remove('hide');
+    //ECRAN_RECOMMENCEZ.classList.remove('hide');
 
     //Masque ecran commencez
     ECRAN_COMMENCER.classList.add('hide');

@@ -1,4 +1,5 @@
 let PLATEAU = {manche:[]};
+const DOM_PLATEAU = document.querySelector('.js_plateau');
 
 function plateau(nbEssai, nbCrant) {
 
@@ -57,5 +58,5 @@ function setPresent(essaiNumero) {
 function compileHanlebars(){
     let dechiffreur = document.querySelector('#manche').innerHTML;
     let compile = Handlebars.compile(dechiffreur);
-    ECRAN_DECHIFFREUR.innerHTML = compile(PLATEAU);
+    DOM_PLATEAU.innerHTML = compile(PLATEAU);
 }

@@ -33,7 +33,7 @@ function essaiCombinaison(essaiNumero) {
         let nbNoir = 0;
         let nbBlanc = 0;
 
-        //console.log("tirage : " + tirage + "\n combinaison : " + combinaison);
+        //console.log(`tirage : ${tirage} \ncombinaison : ${combinaison}`);
 
         //--------------------------------------------------------------
         // Gestion des Noir : bonne couleur bien placé
@@ -63,7 +63,7 @@ function essaiCombinaison(essaiNumero) {
             }
         }
 
-        console.log("total noir : " + nbNoir + "\n total blanc : " + nbBlanc);
+        //console.log(`total noir : ${nbNoir} \ntotal blanc : ${nbBlanc}`);
 
         //--------------------------------------------------------------
         //Met à jour le plateau
