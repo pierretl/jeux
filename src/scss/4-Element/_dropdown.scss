@@ -37,7 +37,7 @@ $dropdown-bordure: 1px;
     padding: $dropdown-marge;
 }
 .dropdown__label:before {
-    content: '⏷';
+    content: '\23f7';
     position: absolute;
     top:40%;
     left:50%;
