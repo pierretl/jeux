@@ -22,4 +22,8 @@ BTN_RECOMMENCER.addEventListener('click', () => {
     //Masque l'écran recommencez
     ECRAN_RECOMMENCEZ.classList.add('hide');
 
+    // Affcihe bouton aide et switch theme
+    ZONE_BTN_REGLES.classList.remove('hide');
+    ZONE_SWITCH.classList.remove('hide');
+
 });

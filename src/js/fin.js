@@ -16,4 +16,11 @@ function ecranFin() {
 
     // masque le plateau
     ECRAN_DECHIFFREUR.classList.add('hide');
+
+    // change etat écran
+    ECRAN_DECHIFFREUR.dataset.enCours = 'false';
+
+    // masque bouton aide et switch theme
+    ZONE_BTN_REGLES.classList.add('hide');
+    ZONE_SWITCH.classList.add('hide');
 }

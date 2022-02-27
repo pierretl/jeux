@@ -30,4 +30,8 @@ BTN_COMMENCER.addEventListener('click', () => {
         DIFFICULTE[difficulteChoisi].crant
     );
 
+    // change l'etat des écrans
+    ECRAN_COMMENCER.dataset.enCours = 'false';
+    ECRAN_DECHIFFREUR.dataset.enCours = 'true';
+
 });

@@ -20,91 +20,37 @@
         <span class="sr-only">MasterM¿nd</span>
     </h1>
 
-    <ul class="reset text-center js_ecran-commencez">
+    <ul class="reset text-center js_ecran-commencez" data-en-cours="true">
         <li class="mb">
             <select id="difficulte"></select>
         </li>
         <li class="mb">
             <button class="btn js_btn-commencez">Commencez</button>
         </li>
-        <li class="mb">
-            <button class="lien iflex ai-c gap js_regles">
-                <svg width="22px" height="22px" aria-hidden="true" focusable="false">
-                    <use xlink:href="#aide"></use>
-                </svg>
-                Règles
-            </button>
-        </li>
-        <li>
-            <input id="theme" type="checkbox" class="switch">
-            <label for="theme" class="flex ai-c">
-                Thème sombre
-                <div></div>
-                Thème clair
-            </label>
-        </li>
     </ul>
 
-    <section class="hide js_ecran-regles">
-        <h1>Déchiffrez le code secret</h1>
-        <p class="mb2">Découvrir les couleurs et la disposition exacte du code secret</p>
 
-        <div class="flex wrap dechiffreur bt bx bb mb2">
-            <div class="p flex ai-c br dechiffreur__numero js_dechiffreur__numero">
-                01 <span class="text-exergue">&nbsp;&larr;&nbsp;Essai</span>
-            </div>
-            <div class="grow flex ai-c p js_dechiffreur__content">
-                <ol class="reset flex ai-c wrap gap--crant">
-                    <li class="crant code1"></li>
-                    <li class="crant code2"></li>
-                    <li class="crant code3"></li>
-                    <li class="crant code4"></li>
-                    <li class="crant code5"></li>
-                    <li class="crant code6"></li>
-                    <li class="crant code7"></li>
-                    <li class="flex ai-c">
-                        <div class="crant code8"></div>
-                         <span class="text-exergue">&nbsp;&larr;&nbsp;Codes</span>
-                    </li>
-                </ol>
-            </div>
-            <div class="dechiffreur flex ai-c grow jc-fe p dechiffreur__btn">
-                <span class="text-exergue">Réponses&nbsp;&rarr;&nbsp;</span>
-                <ul class="reset p flex ai-c gap wrap conteneur-fiche">
-                    <li class="fiche --n"></li>
-                    <li class="fiche --b"></li>
-                    <li class="fiche"></li>
-                </ul>
-            </div>
-        </div>
+    <div class="reset text-center mb js_affiche-regle" data-en-cours="true">
+        <button class="lien iflex ai-c gap js_regles">
+            <svg width="22px" height="22px" aria-hidden="true" focusable="false">
+                <use xlink:href="#aide"></use>
+            </svg>
+            Règles
+        </button>
+    </div>
 
-        <h2>Essai :</h2>
-        Son nombre varie en fonction de la difficulté
-
-        <h2>Codes :</h2>
-        Le nombre de &laquo;codes&raquo; et le nombre de couleurs varient en fonction de la difficulté
-
-        <h2>Réponses :</h2>
-        Leur ordre ne correspond pas à celle des &laquo;codes&raquo;, elle apparaisse dans l'ordre :
-        <dl class="mb2">
-            <dt>Noires :</dt>
-            <dd>Bonne couleur, bien placé</dd>
-            <dt>Blanc :</dt>
-            <dd>Bonne couleur, <strong>mal</strong> placé</dd>
-            <dt>Contour pointillé :</dt>
-            <dd>Couleur incorrecte</dd>
-        </dl>
-        
-        <div class="text-center">
-            <button class="btn js_fermer-regles">
-                J'ai compris, fermer les régles
-            </button>
-        </div>
-    </section>
+    <div class="reset text-center mb js_affiche-switch">
+        <input id="theme" type="checkbox" class="switch">
+        <label for="theme" class="flex ai-c">
+            Thème sombre
+            <div></div>
+            Thème clair
+        </label>
+    </div>
 
 
-    <section class="js_ecran-dechiffreur hide">
-        <ol class="reset flex reverse bb js_plateau"></ol>
+    <section class="js_ecran-dechiffreur hide" data-en-cours="false">
+        <ol class="reset flex reverse js_plateau"></ol>
     </section>
     <template id="manche">
         {{#manche}}
@@ -175,10 +121,73 @@
 
 
 
-    <section class="text-center js_ecran-recommencez hide">
-        <p class="js_message-fin">Message</p>
+    <section class="text-center js_ecran-recommencez hide" data-en-cours="false">
+        <p class="js_message-fin"></p>
         <button class="btn js_btn-recommencez">Recommencez</button>
     </section>
+
+
+
+
+
+    <section class="js_ecran-regles hide">
+        <h1>Déchiffrez le code secret</h1>
+        <p class="mb2">Découvrir les couleurs et la disposition exacte du code secret</p>
+
+        <div class="flex wrap dechiffreur bt bx bb mb2">
+            <div class="p flex ai-c br dechiffreur__numero js_dechiffreur__numero">
+                01 <span class="text-exergue">&nbsp;&larr;&nbsp;Essai</span>
+            </div>
+            <div class="grow flex ai-c p js_dechiffreur__content">
+                <ol class="reset flex ai-c wrap gap--crant">
+                    <li class="crant code1"></li>
+                    <li class="crant code2"></li>
+                    <li class="crant code3"></li>
+                    <li class="crant code4"></li>
+                    <li class="crant code5"></li>
+                    <li class="crant code6"></li>
+                    <li class="crant code7"></li>
+                    <li class="flex ai-c">
+                        <div class="crant code8"></div>
+                         <span class="text-exergue">&nbsp;&larr;&nbsp;Codes</span>
+                    </li>
+                </ol>
+            </div>
+            <div class="dechiffreur flex ai-c grow jc-fe p dechiffreur__btn">
+                <span class="text-exergue">Réponses&nbsp;&rarr;&nbsp;</span>
+                <ul class="reset p flex ai-c gap wrap conteneur-fiche">
+                    <li class="fiche --n"></li>
+                    <li class="fiche --b"></li>
+                    <li class="fiche"></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Essai :</h2>
+        Son nombre varie en fonction de la difficulté
+
+        <h2>Codes :</h2>
+        Le nombre de &laquo;codes&raquo; et le nombre de couleurs varient en fonction de la difficulté
+
+        <h2>Réponses :</h2>
+        Leur ordre ne correspond pas à celle des &laquo;codes&raquo;, elle apparaisse dans l'ordre :
+        <dl class="mb2">
+            <dt>Noires :</dt>
+            <dd>Bonne couleur, bien placé</dd>
+            <dt>Blanc :</dt>
+            <dd>Bonne couleur, <strong>mal</strong> placé</dd>
+            <dt>Contour pointillé :</dt>
+            <dd>Couleur incorrecte</dd>
+        </dl>
+        
+        <div class="text-center">
+            <button class="btn js_fermer-regles">
+                J'ai compris, fermer les régles
+            </button>
+        </div>
+    </section>
+
+
 
     <script src="handlebars.js"></script>
     <script src="script.min.js"></script>
