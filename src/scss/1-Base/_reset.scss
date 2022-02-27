@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    padding: 0;
+    padding: rem-calc(15) rem-calc(15) rem-calc(40);
     font-family: 'Main', 'Times New Roman', Times, serif;
     font-size: 1rem;
     font-weight: 400;
@@ -31,6 +31,10 @@ dt {
 }
 dd {
     color: $couleur-texte-exergue;
+}
+
+h1 {
+    margin-top:0;
 }
 
 h1,
