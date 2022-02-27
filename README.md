@@ -1,5 +1,7 @@
 # Masterm¿nd
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52004e4e-c04a-4ab9-84a3-9555c3553dca/deploy-status)](https://app.netlify.com/sites/jeux/deploys)
+
 ## Configuration
 
 
