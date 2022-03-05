@@ -15,8 +15,8 @@ $dropdown-bordure: 1px;
 
 .dropdown {
     position: relative;
-    border-top-left-radius: $taille-crant;
-    border-top-right-radius: $taille-crant;
+    border-bottom-left-radius: $taille-crant;
+    border-bottom-right-radius: $taille-crant;
     border: 1px solid transparent;
     border-width: $dropdown-bordure $dropdown-bordure 0;
     border-color: transparent;
@@ -59,12 +59,12 @@ $dropdown-bordure: 1px;
 
 .dropdown ul {
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: -$dropdown-bordure;
-    padding: ($dropdown-marge + 8px) $dropdown-marge $dropdown-marge;  
-    border-bottom-left-radius: $taille-crant;
-    border-bottom-right-radius: $taille-crant;
-    border-width: 0 $dropdown-bordure $dropdown-bordure;
+    padding:  $dropdown-marge $dropdown-marge ($dropdown-marge + 8px);  
+    border-top-left-radius: $taille-crant;
+    border-top-right-radius: $taille-crant;
+    border-width: $dropdown-bordure $dropdown-bordure 0;
     border-color: $couleur-bordure;
     border-style: solid;
     background-color: $couleur-fond;
