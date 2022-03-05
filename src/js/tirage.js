@@ -29,4 +29,7 @@ let tirage = (difficulteChoisi) => {
 
     //stocke le tirage
     INPUT_TIRAGE.value = tirage;
+
+    //sauvegarde le tirage
+    localStorage.setItem('tirage', tirage);
 }

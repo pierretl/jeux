@@ -24,6 +24,9 @@ BTN_COMMENCER.addEventListener('click', () => {
         CONTENEUR_FORMULAIRE
     );
 
+    //sauvegarde de la dificulté
+    localStorage.setItem('difficulte', difficulteChoisi);
+
     //Créer le plateau
     plateau(
         DIFFICULTE[difficulteChoisi].nbEssai, 
@@ -34,7 +37,6 @@ BTN_COMMENCER.addEventListener('click', () => {
     ECRAN_COMMENCER.dataset.enCours = 'false';
     ECRAN_DECHIFFREUR.dataset.enCours = 'true';
 
-    //descend l'ecran sur le 1er essai
-    document.querySelector('.js_depart').scrollIntoView();
-
+    //Nous déplace sur la manche actuel si nécessaire
+    document.querySelector('.js_actuel').scrollIntoView();
 });

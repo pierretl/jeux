@@ -36,8 +36,14 @@ function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc) {
     //Set la manche suivante
     setPresent(essaiNumero);
 
+    //sauvegarde le numero de l'essai
+    localStorage.setItem('essaiNumero', essaiNumero);
+
     //Mise à jour du font HTML
     compileHanlebars();
+
+    //sauvegarde du plateau
+    localStorage.setItem('plateau', JSON.stringify(PLATEAU));
 
     //console.log(PLATEAU);
 

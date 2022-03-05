@@ -32,8 +32,10 @@ function plateau(nbEssai, nbCrant) {
 
 
 
-function setPresent(essaiNumero) {
-    let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
+function setPresent(essaiNumero, difficulteChoisi) {
+
+    difficulteChoisi = difficulteChoisi || DOM_DIFFICULTE_SELECT.value;
+    
     let nbCrant = DIFFICULTE[difficulteChoisi].crant;
     let nbCouleur = DIFFICULTE[difficulteChoisi].nbCouleur;
 
