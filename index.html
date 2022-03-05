@@ -54,7 +54,7 @@
     </section>
     <template id="manche">
         {{#manche}}
-            <li class="flex wrap dechiffreur bt bx">
+            <li class="flex wrap dechiffreur bt bx{{#if @first}} js_depart{{/if}}">
                 <div class="p flex ai-c br dechiffreur__numero js_dechiffreur__numero">
                     {{#addZero essaiNumero}}
                          {{essaiNumero}}

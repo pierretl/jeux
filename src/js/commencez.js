@@ -34,4 +34,7 @@ BTN_COMMENCER.addEventListener('click', () => {
     ECRAN_COMMENCER.dataset.enCours = 'false';
     ECRAN_DECHIFFREUR.dataset.enCours = 'true';
 
+    //descend l'ecran sur le 1er essai
+    document.querySelector('.js_depart').scrollIntoView();
+
 });
