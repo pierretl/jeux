@@ -3,11 +3,13 @@ const MESSAGE = document.querySelector('.js_message-fin');
 function gagne(){
     MESSAGE.innerHTML = `Gagné !`;
     ecranFin();
+    effaceSauvegarde();
 }
 
 function perdu(){
     MESSAGE.innerHTML = `Perdu !`;
     ecranFin();
+    effaceSauvegarde();
 }
 
 function ecranFin() {
@@ -23,4 +25,11 @@ function ecranFin() {
     // masque bouton aide et switch theme
     ZONE_BTN_REGLES.classList.add('hide');
     ZONE_SWITCH.classList.add('hide');
+}
+
+function effaceSauvegarde() {
+    localStorage.removeItem('tirage');
+    localStorage.removeItem('plateau');
+    localStorage.removeItem('difficulte');
+    localStorage.removeItem('essaiNumero');
 }
