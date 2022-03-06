@@ -70,6 +70,9 @@
 
     <section class="js_ecran-dechiffreur hide" data-en-cours="false">
         <ol class="reset flex reverse js_plateau"></ol>
+        <div class="text-center mt2">
+            <button class="lien js_supprimer-partie">Supprimer la partie</button>
+        </div>
     </section>
     <template id="manche">
         {{#manche}}
@@ -155,7 +158,7 @@
 
         <div class="flex wrap dechiffreur bt bx bb mb2">
             <div class="p flex ai-c br dechiffreur__numero js_dechiffreur__numero">
-                01 <span class="text-exergue">&nbsp;&larr;&nbsp;Essai</span>
+                01 <span class="text-exergue">&nbsp;&larr;&nbsp;Manche</span>
             </div>
             <div class="grow flex ai-c p js_dechiffreur__content">
                 <ol class="reset flex ai-c wrap gap--crant">
@@ -173,7 +176,7 @@
                 </ol>
             </div>
             <div class="dechiffreur flex ai-c grow jc-fe p dechiffreur__btn">
-                <span class="text-exergue">Réponses&nbsp;&rarr;&nbsp;</span>
+                <span class="text-exergue">Fiche réponses&nbsp;&rarr;&nbsp;</span>
                 <ul class="reset p flex ai-c gap wrap conteneur-fiche">
                     <li class="fiche --n"></li>
                     <li class="fiche --b"></li>
@@ -182,14 +185,14 @@
             </div>
         </div>
 
-        <h2>Essai :</h2>
-        Son nombre varie en fonction de la difficulté
+        <h2>Manche :</h2>
+        Numéros de la manche. Leur nombre total varie en fonction de la difficulté
 
         <h2>Codes :</h2>
         Le nombre de &laquo;codes&raquo; et le nombre de couleurs varient en fonction de la difficulté
 
-        <h2>Réponses :</h2>
-        Leur ordre ne correspond pas à celle des &laquo;codes&raquo;, elle apparaisse dans l'ordre :
+        <h2>Fiche réponses :</h2>
+        Leur ordre ne correspond pas à celle des &laquo;codes&raquo;, elles apparaissent dans l'ordre :
         <dl class="mb2">
             <dt>Noires :</dt>
             <dd>Bonne couleur, bien placé</dd>
