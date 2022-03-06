@@ -27,6 +27,9 @@ BTN_COMMENCER.addEventListener('click', () => {
     //sauvegarde de la dificulté
     localStorage.setItem('difficulte', difficulteChoisi);
 
+    //Adapte l'interface si besoin
+    document.documentElement.setAttribute('data-diffulte', difficulteChoisi);
+
     //Créer le plateau
     plateau(
         DIFFICULTE[difficulteChoisi].nbEssai, 

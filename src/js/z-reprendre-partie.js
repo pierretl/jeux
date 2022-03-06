@@ -19,6 +19,9 @@ if (sauvegardeTirage !== null
         CONTENEUR_FORMULAIRE
     );
 
+    //Adapte l'interface si besoin
+    document.documentElement.setAttribute('data-diffulte', sauvegardeDifficulte);
+
     //Créer le plateau
     plateau(
         DIFFICULTE[sauvegardeDifficulte].nbEssai, 
