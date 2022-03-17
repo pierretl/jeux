@@ -146,8 +146,32 @@
 
 
     <section class="text-center js_ecran-recommencez hide" data-en-cours="false">
-        <p class="js_message-fin"></p>
-        <button class="btn js_btn-recommencez">Recommencez</button>
+        <p class="h1 js_message-fin"></p>
+        <div class="hide js_affiche-solution">
+            <p>Le code à trouver était :</p>
+            <div class="iflex gap js_solution"></div>
+            <template id="solution">
+                {{#each crant}}
+                    <span style="color: var(--{{this}})">&#11044;</span>
+                {{/each}}
+            </template>
+        </div>
+        <p>Résumé de votre partie :</p>
+        <ul class="reset iflex reverse gap p conteneur-fiche js_resume"></ul>
+        <template id="resume">
+            {{#manche}}
+                {{#ifEquals type "Passer"}}
+                    <li class="grow flex jc-c gap">
+                        {{#correction}}
+                            <div class="fiche{{this}}"></div>
+                        {{/correction}}
+                    </li>
+                {{/ifEquals}}
+            {{/manche}}
+        </template>
+        <div class="mt2">
+            <button class="btn js_btn-recommencez">Recommencez</button>
+        </div>
     </section>
 
 

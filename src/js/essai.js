@@ -18,56 +18,43 @@ function essaiCombinaison(essaiNumero) {
     }
 
     // Correction
-    if (JSON.stringify(combinaison) == JSON.stringify(tirage)) {
-        gagne();
-    } else {
+    let nbNoir = 0;
+    let nbBlanc = 0;
 
-        // vérification si la manche est autorisé
-        let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
-        if (DIFFICULTE[difficulteChoisi].nbEssai == essaiNumero) {
-            perdu();
-            return false;
+    //console.log(`tirage : ${tirage} \ncombinaison : ${combinaison}`);
+
+    //--------------------------------------------------------------
+    // Gestion des Noir : bonne couleur bien placé
+    var tirageSansNoir = [];
+    var combinaisonSansNoir = [];
+    for (var i = 0; i < tirage.length; i++) {
+        if (tirage[i] === combinaison[i]) {
+            nbNoir++;
+        } else {
+            tirageSansNoir.push(tirage[i]);
+            combinaisonSansNoir.push(combinaison[i]);
         }
+    }
 
-
-        let nbNoir = 0;
-        let nbBlanc = 0;
-
-        //console.log(`tirage : ${tirage} \ncombinaison : ${combinaison}`);
-
-        //--------------------------------------------------------------
-        // Gestion des Noir : bonne couleur bien placé
-        var tirageSansNoir = [];
-        var combinaisonSansNoir = [];
-        for (var i = 0; i < tirage.length; i++) {
-            if (tirage[i] === combinaison[i]) {
-                nbNoir++;
-            } else {
-                tirageSansNoir.push(tirage[i]);
-                combinaisonSansNoir.push(combinaison[i]);
-            }
-        }
-
-        //--------------------------------------------------------------
-        // Gestion des Blanc : bonne couleur mal placé
-        for (var j = 0; j < tirageSansNoir.length; j++) {
-            if (tirageSansNoir[j] != "") {
-                for (var k = 0; k < combinaisonSansNoir.length; k++) {
-                    if (tirageSansNoir[j] === combinaisonSansNoir[k]) {
-                        tirageSansNoir[j] = "";
-                        combinaisonSansNoir[k] = "";
-                        nbBlanc++;
-                        break;
-                    }
+    //--------------------------------------------------------------
+    // Gestion des Blanc : bonne couleur mal placé
+    for (var j = 0; j < tirageSansNoir.length; j++) {
+        if (tirageSansNoir[j] != "") {
+            for (var k = 0; k < combinaisonSansNoir.length; k++) {
+                if (tirageSansNoir[j] === combinaisonSansNoir[k]) {
+                    tirageSansNoir[j] = "";
+                    combinaisonSansNoir[k] = "";
+                    nbBlanc++;
+                    break;
                 }
             }
         }
-
-        //console.log(`total noir : ${nbNoir} \ntotal blanc : ${nbBlanc}`);
-
-        //--------------------------------------------------------------
-        //Met à jour le plateau
-        majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc);
-        
     }
+
+    //console.log(`total noir : ${nbNoir} \ntotal blanc : ${nbBlanc}`);
+
+    //--------------------------------------------------------------
+    //Met à jour le plateau
+    majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc, tirage);
+    
 }

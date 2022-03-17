@@ -151,45 +151,58 @@ function essaiCombinaison(essaiNumero) {
     }
 
     // Correction
-    let nbNoir = 0;
-    let nbBlanc = 0;
+    if (JSON.stringify(combinaison) == JSON.stringify(tirage)) {
+        gagne();
+    } else {
 
-    //console.log(`tirage : ${tirage} \ncombinaison : ${combinaison}`);
-
-    //--------------------------------------------------------------
-    // Gestion des Noir : bonne couleur bien placé
-    var tirageSansNoir = [];
-    var combinaisonSansNoir = [];
-    for (var i = 0; i < tirage.length; i++) {
-        if (tirage[i] === combinaison[i]) {
-            nbNoir++;
-        } else {
-            tirageSansNoir.push(tirage[i]);
-            combinaisonSansNoir.push(combinaison[i]);
+        // vérification si la manche est autorisé
+        let difficulteChoisi = DOM_DIFFICULTE_SELECT.value;
+        if (DIFFICULTE[difficulteChoisi].nbEssai == essaiNumero) {
+            perdu();
+            //return false;
         }
-    }
 
-    //--------------------------------------------------------------
-    // Gestion des Blanc : bonne couleur mal placé
-    for (var j = 0; j < tirageSansNoir.length; j++) {
-        if (tirageSansNoir[j] != "") {
-            for (var k = 0; k < combinaisonSansNoir.length; k++) {
-                if (tirageSansNoir[j] === combinaisonSansNoir[k]) {
-                    tirageSansNoir[j] = "";
-                    combinaisonSansNoir[k] = "";
-                    nbBlanc++;
-                    break;
+
+        let nbNoir = 0;
+        let nbBlanc = 0;
+
+        //console.log(`tirage : ${tirage} \ncombinaison : ${combinaison}`);
+
+        //--------------------------------------------------------------
+        // Gestion des Noir : bonne couleur bien placé
+        var tirageSansNoir = [];
+        var combinaisonSansNoir = [];
+        for (var i = 0; i < tirage.length; i++) {
+            if (tirage[i] === combinaison[i]) {
+                nbNoir++;
+            } else {
+                tirageSansNoir.push(tirage[i]);
+                combinaisonSansNoir.push(combinaison[i]);
+            }
+        }
+
+        //--------------------------------------------------------------
+        // Gestion des Blanc : bonne couleur mal placé
+        for (var j = 0; j < tirageSansNoir.length; j++) {
+            if (tirageSansNoir[j] != "") {
+                for (var k = 0; k < combinaisonSansNoir.length; k++) {
+                    if (tirageSansNoir[j] === combinaisonSansNoir[k]) {
+                        tirageSansNoir[j] = "";
+                        combinaisonSansNoir[k] = "";
+                        nbBlanc++;
+                        break;
+                    }
                 }
             }
         }
+
+        //console.log(`total noir : ${nbNoir} \ntotal blanc : ${nbBlanc}`);
+
+        //--------------------------------------------------------------
+        //Met à jour le plateau
+        majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc);
+        
     }
-
-    //console.log(`total noir : ${nbNoir} \ntotal blanc : ${nbBlanc}`);
-
-    //--------------------------------------------------------------
-    //Met à jour le plateau
-    majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc, tirage);
-    
 }
 const MESSAGE = document.querySelector('.js_message-fin');
 const AFFICHE_SOLUTION = document.querySelector('.js_affiche-solution');
@@ -346,7 +359,7 @@ function compileHanlebars(){
     let compile = Handlebars.compile(dechiffreur);
     DOM_PLATEAU.innerHTML = compile(PLATEAU);
 }
-function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc, tirage) {
+function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc) {
 
     // Passe la manche en mode Passer
     PLATEAU.manche[essaiNumero - 1].type = "Passer";
@@ -381,33 +394,19 @@ function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc, tirage) {
         }
     }
 
+    //Set la manche suivante
+    setPresent(essaiNumero);
+
     //sauvegarde le numero de l'essai
     localStorage.setItem('essaiNumero', essaiNumero);
 
+    //Mise à jour du font HTML
+    compileHanlebars();
 
     //sauvegarde du plateau
     localStorage.setItem('plateau', JSON.stringify(PLATEAU));
 
-
     //console.log(PLATEAU);
-
-
-    // partie gagné ?
-    if (JSON.stringify(combinaison) == JSON.stringify(tirage)) {
-        gagne();
-    } else {
-        let difficulteChoisi = DIFFICULTE[DOM_DIFFICULTE_SELECT.value].nbEssai;
-        if (difficulteChoisi == essaiNumero) {
-            perdu();
-        } else {
-            //Set la manche suivante
-            setPresent(essaiNumero);
-
-            //Mise à jour du front HTML
-            compileHanlebars();
-        }
-    }
-   
 
 }
 const BTN_RECOMMENCER = document.querySelector('.js_btn-recommencez');

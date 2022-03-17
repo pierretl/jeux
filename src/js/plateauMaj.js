@@ -1,4 +1,4 @@
-function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc) {
+function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc, tirage) {
 
     // Passe la manche en mode Passer
     PLATEAU.manche[essaiNumero - 1].type = "Passer";
@@ -33,18 +33,32 @@ function majPlateau(essaiNumero, combinaison, nbNoir, nbBlanc) {
         }
     }
 
-    //Set la manche suivante
-    setPresent(essaiNumero);
-
     //sauvegarde le numero de l'essai
     localStorage.setItem('essaiNumero', essaiNumero);
 
-    //Mise à jour du font HTML
-    compileHanlebars();
 
     //sauvegarde du plateau
     localStorage.setItem('plateau', JSON.stringify(PLATEAU));
 
+
     //console.log(PLATEAU);
+
+
+    // partie gagné ?
+    if (JSON.stringify(combinaison) == JSON.stringify(tirage)) {
+        gagne();
+    } else {
+        let difficulteChoisi = DIFFICULTE[DOM_DIFFICULTE_SELECT.value].nbEssai;
+        if (difficulteChoisi == essaiNumero) {
+            perdu();
+        } else {
+            //Set la manche suivante
+            setPresent(essaiNumero);
+
+            //Mise à jour du front HTML
+            compileHanlebars();
+        }
+    }
+   
 
 }

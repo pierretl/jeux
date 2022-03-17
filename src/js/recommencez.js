@@ -22,8 +22,11 @@ BTN_RECOMMENCER.addEventListener('click', () => {
     //Masque l'écran recommencez
     ECRAN_RECOMMENCEZ.classList.add('hide');
 
-    // Affcihe bouton aide et switch theme
+    // Affiche bouton aide et switch theme
     ZONE_BTN_REGLES.classList.remove('hide');
     ZONE_SWITCH.classList.remove('hide');
+
+    //Masque le bloc solution dans l'écran de fin
+    SOLUTION.classList.add('hide');
 
 });
