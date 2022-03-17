@@ -76,65 +76,67 @@
     </section>
     <template id="manche">
         {{#manche}}
-            <li class="flex wrap dechiffreur bt bx{{#ifEquals type 'Present'}} js_actuel{{/ifEquals}}">
-                <div class="p flex ai-c br dechiffreur__numero js_dechiffreur__numero">
+            <li class="dechiffreur bt bx{{#ifEquals type 'Present'}} js_actuel{{/ifEquals}}">
+                <div class="dechiffreur__numero js_dechiffreur__numero">
                     {{#addZero essaiNumero}}
                          {{essaiNumero}}
                     {{/addZero}}
                 </div>
-                <div class="grow flex ai-c p js_dechiffreur__content">
-                    {{#ifEquals type "Futur"}}
-                        <ol class="reset flex ai-c gap--crant">
-                            {{#repeat nombreCrant}}
-                                <li class="crant"></li>
-                            {{/repeat}}
-                        </ol>
-                    {{/ifEquals}}
+                <div class="flex wrap">
+                    <div class="flex ai-c p js_dechiffreur__content">
+                        {{#ifEquals type "Futur"}}
+                            <ol class="reset flex wrap ai-c gap--crant">
+                                {{#repeat nombreCrant}}
+                                    <li class="crant"></li>
+                                {{/repeat}}
+                            </ol>
+                        {{/ifEquals}}
+                        {{#ifEquals type "Present"}}
+                            <ol class="reset flex wrap gap">
+                                {{#dropdown.crant}}
+                                    <li class="dropdown">
+                                        <button class="crant dropdown__label js_dropdown-label"
+                                                aria-expanded="false"
+                                                onClick="dropdown(this)"
+                                                data-code=""
+                                                data-item="{{idItem}}">
+                                        </button>
+                                        <ul class="reset hide">
+                                            {{#idCouleur}}
+                                                <li>
+                                                    <button class="crant code{{this}}"
+                                                            onClick="choixCouleur(this, {{this}}, {{../idItem}})">
+                                                    </button>
+                                                </li>
+                                            {{/idCouleur}}
+                                        </ul>
+                                    </li>
+                                {{/dropdown.crant}}
+                            </ol>
+                        {{/ifEquals}}
+                        {{#ifEquals type "Passer"}}
+                            <ol class="reset flex wrap ai-c gap--crant">
+                                {{#essai}}
+                                    <li class="crant {{this}}"></li>
+                                {{/essai}}
+                            </ol>
+                        {{/ifEquals}}
+                    </div>
                     {{#ifEquals type "Present"}}
-                        <ol class="reset flex gap">
-                            {{#dropdown.crant}}
-                                <li class="dropdown">
-                                    <button class="crant dropdown__label js_dropdown-label"
-                                            aria-expanded="false"
-                                            onClick="dropdown(this)"
-                                            data-code=""
-                                            data-item="{{idItem}}">
-                                    </button>
-                                    <ul class="reset hide">
-                                        {{#idCouleur}}
-                                            <li>
-                                                <button class="crant code{{this}}"
-                                                        onClick="choixCouleur(this, {{this}}, {{../idItem}})">
-                                                </button>
-                                            </li>
-                                        {{/idCouleur}}
-                                    </ul>
-                                </li>
-                            {{/dropdown.crant}}
-                        </ol>
+                        <div class="p flex ai-c jc-fe grow">
+                            <button class="btn" onclick="essaiCombinaison({{essaiNumero}})">Valider</button>
+                        </div>
                     {{/ifEquals}}
                     {{#ifEquals type "Passer"}}
-                        <ol class="reset flex ai-c gap--crant">
-                            {{#essai}}
-                                <li class="crant {{this}}"></li>
-                            {{/essai}}
-                        </ol>
+                        <div class="dechiffreur flex ai-c jc-fe grow p">
+                            <ul class="reset p flex ai-c gap wrap conteneur-fiche">
+                                {{#correction}}
+                                    <li class="fiche{{this}}"></li>
+                                {{/correction}}
+                            </ul>
+                        </div>
                     {{/ifEquals}}
                 </div>
-                {{#ifEquals type "Present"}}
-                    <div class="p flex ai-c jc-fe grow">
-                        <button class="btn" onclick="essaiCombinaison({{essaiNumero}})">Valider</button>
-                    </div>
-                {{/ifEquals}}
-                {{#ifEquals type "Passer"}}
-                    <div class="dechiffreur flex ai-c jc-fe grow p">
-                        <ul class="reset p flex ai-c gap wrap conteneur-fiche">
-                            {{#correction}}
-                                <li class="fiche{{this}}"></li>
-                            {{/correction}}
-                        </ul>
-                    </div>
-                {{/ifEquals}}
             </li>
         {{/manche}}
     </template>
